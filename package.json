@@ -1,0 +1,74 @@
+{
+	"name": "skaffe",
+	"version": "0.0.0",
+	"license": "MIT",
+	"homepage": "http://www.google.com",
+	"description": "blablabla",
+	"author": "PatLaplante Software Consulting <laplante.patrick@gmail.com> (https://patlaplante.com)",
+	"keywords": [
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/patbonecrusher/skaffe.git"
+	},
+	"scripts": {
+		"dev": "electron-webpack dev",
+		"compile": "electron-webpack",
+		"dist": "yarn compile && electron-builder -mwl",
+		"dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+		"pack": "build --dir",
+		"dist2": "build"
+	},
+	"build": {
+		"appId": "yourappid",
+		"dmg": {
+			"contents": [
+				{
+					"x": 110,
+					"y": 150
+				},
+				{
+					"x": 240,
+					"y": 150,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"category": "Utility",
+			"synopsis": "A test",
+			"target": [
+				"AppImage",
+				"snap",
+				"deb"
+			]
+		},
+		"win": {
+			"target": "portable",
+			"icon": "foo.ico"
+		},
+		"deb": {
+			"artifactName": "${productName}-${version}-${arch}.${ext}",
+			"depends": [
+				"gconf2",
+				"gconf-service",
+				"libnotify4",
+				"libxtst6",
+				"libnss3",
+				"libsecret-1-0",
+				"libxss1"
+			]
+		}
+	},
+	"dependencies": {
+		"electron-builder-squirrel-windows": "^20.40.0",
+		"source-map-support": "^0.5.12"
+	},
+	"devDependencies": {
+		"electron": "4.0.1",
+		"electron-builder": "20.38.4",
+		"electron-webpack": "^2.6.2",
+		"webpack": "4.28.4"
+	}
+}
