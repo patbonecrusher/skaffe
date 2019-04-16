@@ -5,8 +5,7 @@
 	"homepage": "http://www.google.com",
 	"description": "blablabla",
 	"author": "PatLaplante Software Consulting <laplante.patrick@gmail.com> (https://patlaplante.com)",
-	"keywords": [
-	],
+	"keywords": [],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/patbonecrusher/skaffe.git"
@@ -63,9 +62,12 @@
 	},
 	"dependencies": {
 		"electron-builder-squirrel-windows": "^20.40.0",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
 		"source-map-support": "^0.5.12"
 	},
 	"devDependencies": {
+		"@babel/preset-react": "^7.0.0",
 		"electron": "4.0.1",
 		"electron-builder": "20.38.4",
 		"electron-webpack": "^2.6.2",

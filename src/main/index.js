@@ -13,13 +13,14 @@ function createMainWindow() {
   const window = new BrowserWindow()
 
   if (isDevelopment) {
-    window.webContents.openDevTools()
+    //window.webContents.openDevTools()
   }
 
   if (isDevelopment) {
     window.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`)
   }
   else {
+    console.log(__dirname)
     window.loadURL(formatUrl({
       pathname: path.join(__dirname, 'index.html'),
       protocol: 'file',
