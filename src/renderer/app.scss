@@ -1,3 +1,50 @@
 @import "~normalize.css";
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+html,body, #app {
+	box-sizing: border-box;
+	display:block;
+	height:100%;
+	margin:0;
+	overflow:hidden;
+	width:100%;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+}
+
+#content {
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	flex: 1 1 auto;
+	position: relative;
+}
+
+#navi {
+	display: flex;
+	flex-direction: column;
+	height: auto;	
+}
+
+#TabsExample {
+	display: flex;
+	flex-grow: true;	
+}
+
+.skaffe-main {
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	flex: 1 1 auto;
+	position: relative;
+}
+
+.skaffe-main.bp3-dark,
+.bp3-dark .bp3-navbar{
+	background-color:#394b59;
+	height: 100%;
+}

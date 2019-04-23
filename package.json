@@ -62,6 +62,7 @@
 	},
 	"dependencies": {
 		"@blueprintjs/core": "^3.15.1",
+		"@blueprintjs/docs-theme": "^3.2.0",
 		"electron-builder-squirrel-windows": "^20.40.0",
 		"normalize.css": "^8.0.1",
 		"react": "^16.8.6",
