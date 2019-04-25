@@ -1,9 +1,12 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Menu } from 'electron'
 import * as path from 'path'
 import { format as formatUrl } from 'url'
 import Store from '../common/store.js'
+
+import template from './menu'
+import tb from './touchbar'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -16,6 +19,10 @@ const appName = 'Skaffe';
 app.setName(appName);
 const appData = app.getPath('appData');
 app.setPath('userData', path.join(appData, appName));
+
+// app.on('window-all-closed', function () {
+//   app.quit()
+// })
 
 const store = new Store({
   // We'll call our data file 'user-preferences'
@@ -89,4 +96,19 @@ app.on('activate', () => {
 // create main BrowserWindow when electron is ready
 app.on('ready', () => {
   mainWindow = createMainWindow()
+
+  var menu = Menu.buildFromTemplate(template)
+  //var touchBarMenu = require('./touchbar-menu')
+  switch (process.platform) {
+    case 'darwin':
+      Menu.setApplicationMenu(menu)
+      mainWindow.setTouchBar(tb)
+      break
+    case 'win32':
+      mainWindow.setMenu(menu)
+      break
+    case 'linux':
+      Menu.setApplicationMenu(menu)
+      mainWindow.setMenu(menu)
+  }
 })
