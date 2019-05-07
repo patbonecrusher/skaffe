@@ -11,28 +11,18 @@ html,body, #app {
 	width:100%;
 }
 
-#app {
-	display: flex;
-	flex-direction: column;
-}
-
-#content {
-	display: flex;
-	flex-direction: row;
-	overflow: hidden;
-	flex: 1 1 auto;
-	position: relative;
-}
-
 #navi {
 	display: flex;
 	flex-direction: column;
-	height: auto;	
+	height:100%;
+	margin:0;
+	overflow:hidden;
+	width:100%;
 }
 
-#TabsExample {
+#project_viewer {
 	display: flex;
-	flex-grow: true;	
+	flex-grow: 1;	
 }
 
 .skaffe-main {
