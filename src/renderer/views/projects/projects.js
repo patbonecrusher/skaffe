@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Header, ProjectViewer } from '../../components';
+import { Header, ProjectViewer} from '../../components';
 
 import './projects.scss'
 

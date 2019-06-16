@@ -18,6 +18,35 @@ html,body, #app {
 	margin:0;
 	overflow:hidden;
 	width:100%;
+
+	> header {
+		position: relative;
+		height: var(--darwin-title-bar-height);//34px;
+		//font-size: 16px;
+		line-height: 1.5;
+		vertical-align: middle;
+		text-align: center;
+		cursor: default;
+		user-select:none;
+		-webkit-user-select: none;
+		-webkit-app-region: drag;
+		flex: 0 0 auto;
+		//background: linear-gradient(to bottom, #3b3f46 0%, #2b2e33 100%);
+    	//border-bottom: 1px solid #000;
+	}
+
+	> footer {
+		position: relative;
+		flex: 0 0 auto;
+		order: 2;
+		z-index: 4;
+		//display: block;
+		// box-sizing: border-box;
+		height: 34px;
+		position: relative;
+		text-align: center;
+		background: linear-gradient(to bottom, #3b3f46 0%, #2b2e33 100%);
+	}
 }
 
 #project_viewer {
@@ -38,4 +67,22 @@ html,body, #app {
 	// background-color:#394b59;
 	background-color:#232529;
 	height: 100%;
+}
+
+#react-application {
+	flex-direction: column;
+	display: flex;
+	height: 100%;
+	overflow:hidden;
+	position:relative;
+	box-sizing:border-box;
+
+
+	> main {
+		flex: 1 1 auto;
+		position: relative;
+		box-sizing: border-box;
+	}
+
+
 }
