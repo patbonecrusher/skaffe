@@ -20,6 +20,7 @@ const createMainWindow = app => {
 	const mainWindow = new BrowserWindow({
 		x: windowSize.x,
 		y: windowSize.y,
+		titleBarStyle: 'hidden',
 		width: windowSize.width,
 		height: windowSize.height,
 		// useContentSize: true,

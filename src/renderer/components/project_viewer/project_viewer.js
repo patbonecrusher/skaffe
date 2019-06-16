@@ -6,20 +6,25 @@ import './project_viewer.scss'
 
 
 class ProjectViewer extends React.Component {
-  handleNavbarTabChange(navbarTabId) {
+  constructor () {
+    super();
+    this.handleTabChange    = this.handleTabChange.bind(this);
+    this.state = { navbarTabId: "rx" };
+  }
+  
+  handleTabChange(navbarTabId) {
     this.setState({ navbarTabId })
   } 
 
 	render() {
 		return (
 			<div id="project_viewer">
-        <Tabs id="TabsExample" onChange={this.handleTabChange} selectedTabId="rx">
+        <Tabs id="TabsExample" onChange={this.handleTabChange} selectedTabId={this.state.navbarTabId} animate="true">
           <Tab id="ng" title="Angular" panel={<AngularPanel />} />
           <Tab id="mb" title="Ember" panel={<EmberPanel />} panelClassName="ember-panel" />
           <Tab id="rx" title="React" panel={<ReactPanel />} />
           <Tab id="bb" disabled title="Backbone" panel={<BackbonePanel />} />
           <Tabs.Expander />
-          <input className="bp3-input" type="text" placeholder="Search..." />
         </Tabs>
 			</div>
 		);
