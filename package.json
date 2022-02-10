@@ -78,7 +78,7 @@
 		"electron": "4.0.1",
 		"electron-builder": "20.38.4",
 		"electron-webpack": "^2.6.2",
-		"node-sass": "^4.11.0",
+		"node-sass": "^7.0.0",
 		"sass-loader": "^7.1.0",
 		"webpack": "4.28.4",
 		"webpack-build-notifier": "^0.1.31"
